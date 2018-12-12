@@ -44,4 +44,8 @@ describe("HomePage", () => {
 
     expect(homepage.calculate).toHaveBeenCalled(); // check if the function has been called
   });
+  
+  it("should have user array", () => {
+    expect(homepage.user).toEqual({});
+  });
 });
