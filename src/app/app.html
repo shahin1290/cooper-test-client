@@ -11,6 +11,10 @@
         {{p.title}}
       </button>
 
+      <button ion-item (click)="signupPopUp()" *ngIf="!currentUser">
+        Signup
+      </button>
+
       <button ion-item (click)="loginPopUp()" *ngIf="!currentUser">
         Login
       </button>

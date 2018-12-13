@@ -12,6 +12,13 @@ import { Angular2TokenService } from 'angular2-token';
 describe('AppComponent', () => {
   let fixture, component;
 
+  let signUpData = {
+    email: 'test@test.com',
+    password: 'password',
+    passwordConfirmation: 'password',
+    userType: String
+  }
+
   let signInData = {
     email: 'test@test.com',
     password: 'password',
@@ -51,6 +58,19 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy();
     expect(component instanceof MyApp).toEqual(true);
   });
+
+  it('register method', inject([Angular2TokenService, MockBackend], (tokenService, mockBackend) => {
+
+    mockBackend.connections.subscribe(
+      c => {
+        expect(c.request.getBody()).toEqual(JSON.stringify(signUpData));
+        expect(c.request.method).toEqual(RequestMethod.Post);
+        expect(c.request.url).toEqual('https://ca-cooper--test-api.herokuapp.com/api/v1/auth');
+      }
+    );
+
+    component.signup(signUpData);
+  }));
 
   it('login method', inject([Angular2TokenService, MockBackend], (tokenService, mockBackend) => {
 

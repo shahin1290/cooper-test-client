@@ -49,8 +49,54 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 
+  signupPopUp() {
+    console.log('signupPopUp')
+    let confirm = this.alertCtrl.create({
+      title: 'Signup',
+      inputs: [
+        {
+          name: 'email',
+          placeholder: 'email'
+        },
+        {
+          name: 'password',
+          placeholder: 'password',
+          type: 'password'
+        },
+        {
+          name: 'passwordConfirmation',
+          placeholder: 'passwordConfirmation',
+          type: 'password'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Signup',
+          handler: data => {
+            this.signup(data);
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+
+  signup(credentials) {
+    this._tokenService
+      .registerAccount(credentials)
+        .subscribe(
+         res => (this.currentUser = res.json().data),
+         err => console.error('error')
+      );
+  }
+
   loginPopUp() {
-    console.log('popup');
     let confirm = this.alertCtrl.create({
       title: 'Login',
       inputs: [
