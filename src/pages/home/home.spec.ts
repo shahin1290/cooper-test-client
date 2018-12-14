@@ -8,7 +8,7 @@ import { PersonProvider } from './../../providers/person/person';
 import { PerformanceDataProvider } from './../../providers/performance-data/performance-data';
 import { CooperProvider } from './../../providers/cooper/cooper';
 import { Angular2TokenService } from 'angular2-token';
-import { Http, BaseRequestOptions, RequestMethod } from '@angular/http'
+import { Http, BaseRequestOptions } from '@angular/http'
 import { MockBackend } from '@angular/http/testing';
 
 describe("HomePage", () => {
