@@ -1,9 +1,9 @@
 # The Cooper test challenge
-    We have a client request to build a mobile fitness tracking application. The idea is that the app will allow users to track their condition using a specific test called The Cooper Test.
+We have a client request to build a mobile fitness tracking application. The idea is that the app will allow users to track their condition using a specific test called The Cooper Test.
 
-    The Cooper test is used to monitor the development of a person's aerobic endurance and to obtain an estimate of their VO2 max.
+The Cooper test is used to monitor the development of a person's aerobic endurance and to obtain an estimate of their VO2 max.
 
-    The challenge is to build a software solution that will make it possible not to only make the calculation but to record the data over time. Another requirement is that the app should have functionality that presents historical data of tests if a user has saved any historical data.
+The challenge is to build a software solution that will make it possible not to only make the calculation but to record the data over time. Another requirement is that the app should have functionality that presents historical data of tests if a user has saved any historical data.
 
 ## Technology Stack
 ### The Back End
